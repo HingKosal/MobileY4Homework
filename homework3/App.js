@@ -1,19 +1,16 @@
-import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-
+import React, {useState} from 'react';
+import {View, Text} from 'react-native';
+import ListItem from './components/ListItem';
 export default () => {
+  const items = ['Math', 'Physic', 'Chemistry', 'History', 'Biology'];
+  const [selectedItem, setSelectedItem] = useState('');
   return (
     <View>
-      <Text style={styles.title}>Hello</Text>
+      <ListItem
+        items={items}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
+      />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  title: {
-    color: 'blue',
-    fontSize: 25,
-    textAlign: 'center',
-    margin: 45,
-  },
-});
